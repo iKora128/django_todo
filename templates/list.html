@@ -1,27 +1,19 @@
-<!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
-        ul {
-  list-style: none;
-}
-    </style>
-    <title>Django_Todo</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
 
-{% for item in object_list %}
-<ul>
-<h2><li>{{ item.title }}</li></h2>
-<li>{{ item.memo }}</li>
-</ul>
-{% endfor %}
+{% block header %}
+ this is header
+{% endblock header %}
 
-</body>
-</html>
+ {% block content %}
+ {% for item in object_list %}
 
+<div class="alert alert-secondary" role="alert">
+  {{ item.title }}
+</div>
+<div class="alert alert-secondary" role="alert">
+  {{ item.memo }}
+</div>
+
+ {% endfor %}
+ {% endblock content %}
