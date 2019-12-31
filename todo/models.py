@@ -7,7 +7,8 @@ class ToDoModel(models.Model):
     memo = models.TextField()
     priority = models.CharField(
         max_length=50,
-        choices = PRIORITY
+        choices = PRIORITY,
+        default= "normal",
     )
     duedate =models.DateField()
 
